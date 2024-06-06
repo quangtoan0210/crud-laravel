@@ -3,8 +3,13 @@
 Danh sách sản phẩm
 @endsection
 @section('content')
+@if(session()->has('success'))
+    <div class="alert alert-success"> 
+        {{session()->get('success')}}
+    </div>
+@endif
 <h2><a href="{{route('products.create')}}" class="btn btn-success">Create</a></h2>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Id</th>

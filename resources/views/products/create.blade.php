@@ -29,10 +29,6 @@ Thêm mới sản phẩm
         <label for="overview" class="form-label">Overview:</label>
         <input type="text" class="form-control" id="overview"  name="overview">
     </div>
-    <div class="mb-3 mt-3">
-        <label for="content" class="form-label">Content:</label>
-        <textarea type="text" class="form-control"  row="10" id="content"  name="content"></textarea>
-    </div>
     <a href="{{route('products.index')}}" class="btn btn-success">Quay lại</a>
 
     <button type="submit" class="btn btn-primary">Submit</button>

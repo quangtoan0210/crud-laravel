@@ -39,7 +39,7 @@ class ProductController extends Controller
             $data['img_thumb'] = 'storage/' . $pathFile;
         }
         Product::query()->create($data);
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success','thao tác thành công');
     }
 
     /**
@@ -74,7 +74,7 @@ class ProductController extends Controller
         if ($request->hasFile('img_thumb') && $currentImgThumb && file_exists(public_path($currentImgThumb))) {
             unlink(public_path($currentImgThumb));
         }
-        return redirect()->route('products.index');
+        return back()->with('success','thao tác thành công');
     }
 
     /**
@@ -86,6 +86,6 @@ class ProductController extends Controller
         if($product->img_thumb && file_exists(public_path($product->img_thumb))){
             unlink(public_path($product->img_thumb));
         }
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success','thao tác thành công');
     }
 }
